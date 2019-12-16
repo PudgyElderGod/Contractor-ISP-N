@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='row'>
+    {% for product in products %}
+    <div class='col-md-6' >
+        <h2>{{ product.name }}</h2>
+        <h4>{{ product.description }}</h4>
+        <h4>{{product.price}}</h4>
+        <img class="mongo-images" src={{product.image}}>
+        <p>
+            <form method='POST' action='/products/{{ product._id }}/add'>
+                <input type='hidden'>
+                <button class='btn btn-primary' type='submit'>Add To Cart</button>
+            </form>
+        </p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

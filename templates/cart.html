@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='row'>
+    {% for cart in carts %}
+    <div class='col-md-6'>
+        <h2>{{ cart.name }}</h2>
+        <h4>{{ cart.description }}</h4>
+        <img class="mongo-images" src={{cart.image}}>
+        <p>
+            <form method='POST' action='/carts/{{ cart._id }}/delete'>
+                <input type='hidden'>
+                <button class='btn btn-primary' type='submit'>Remove From Cart</button>
+            </form>
+        </p>
+    </div>
+    {% endfor %}
+
+</div>
+<footer>
+    <h2>${{total}}</h2>
+</footer>
+{% endblock %}
