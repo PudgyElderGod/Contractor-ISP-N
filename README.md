@@ -1,3 +1,4 @@
 Contractor for BEW1.1
 
-Heroku pls work
+https://tranquil-tundra-42488.herokuapp.com/
+Hopefully it works
